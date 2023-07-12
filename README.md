@@ -18,7 +18,7 @@ Hardware Components
 PCB Design
 ----------
 
-A custom PCB design for this project is available in the `gerber` folder in the repository. The design includes all the necessary connections for the ESP32-C3, the optoisolator, and the resistors. You can use this design to create a compact and reliable hardware setup for this project.
+A custom PCB design for this project is available in the `design/gerber` folder in the repository. The design includes all the necessary connections for the ESP32-C3, the optoisolator, and the resistors. You can use this design to create a compact and reliable hardware setup for this project.
 
 Software Components
 -------------------
@@ -42,7 +42,7 @@ Setup Instructions
 8.  Assemble the hardware components as described in the PCB design.
 9.  Connect the ESP32-C3 setup to the doorbell system.
 
-Support
+State of the project
 -------
 As today the design is still UNTESTED and it will be updated once I will be able to build the boards and test everything properly.
 
@@ -59,9 +59,9 @@ If you have any questions or run into any issues, feel free to open an issue on 
 Future Enhancements
 -------------------
 
-While this project provides a basic integration of a doorbell system with a smart home setup, there's a lot more that could be done. Future enhancements would aim on implementing the possibility of opening the door from the smart home system. I would love to be able to hear and speak from HomeKit but we will see how much time this would take me. Contribuitions are more than welcome.
+While this project provides a basic integration of a doorbell system with a smart home setup, there's a lot more that could be done. As of today, the way the battery will get charged is using the type c connector because I couldn't find a clear answer on how to power the board from the pins without breaking the charging functionality. I found only a reference in the [Seed Studio documentation](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) in the chapter titled 'Power Pins', which I didn't quite understand. Future enhancements would aim to implement the possibility of opening the door from the smart home system. I would love to be able to hear and speak from HomeKit but we will see how much time this would take me. Contributions are more than welcome.
 
 License
 -------
 
-This project is open source and available under the [Apache 2 License](LICENSE).
+This project is open source and available under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
