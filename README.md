@@ -17,6 +17,7 @@ Your smart doorbell will consist of:
 
 *   Seed Studio ESP32-S3 board (the C3 is not a viable option because it misses the possibility of being waken up from external inputs)
 *   PC817C Optoisolator
+*   Buck converter DD2712SA 5v
 *   Pull-up resistor (1k ohm)
 *   Current-limiting resistor (390 ohms)
 *   DO-41 Diode
