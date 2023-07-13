@@ -4,7 +4,7 @@
 # eMail=
 #
 # Project=Buzzer breakout
-# Date=13:36:05
+# Date=14:48:40
 # CreatedBy=Fritzing 1.0.0rc.2023-06-02.CD-4157-0-6b14cfe9
 #
 #
@@ -14,14 +14,15 @@
 #
 RefDes,Description,Package,X,Y,Rotation,Side,Mount
 Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
-Via2,";;;;;;;;","",354.72,1445.1,0,Top,MANUAL
-Via1,";;;;;;;;","",75.044,1553.98,0,Top,MANUAL
-Type c exit,";;;;;;;;","THT",356.591,1562.82,-90,Bottom,THT
-U1,";;;;;;;;","THT",904.721,428.407,0,Top,THT
-Restistenza per ingresso octoupler led,"330;;;;;0.25W;;;","THT",1454.72,75.0466,180,Top,THT
-A2,";;;;;;;;","",556.217,1222.55,0,Top,MANUAL
-Buzzer entrance,";;;;;;;;","jst-2-smd",1445.27,635.676,90,Top,SMT
-Pullup octocoupler,"1k;;;;;0.25W;;;","THT",281.207,75.0466,180,Top,THT
-JP6,";;;;;;;;","molex-1x6_lock",1304.72,1595.05,0,Bottom,SMT
-Voltage entrance,";;;;;;;;","jst-2-smd",1445.27,1135.68,90,Top,SMT
-Battery connector,";;;;;;;;","jst-2-smd",264.168,514.422,-90,Top,SMT
+Via1,";;;;;;;;","",564,1079.14,0,Top,MANUAL
+DO-41,";;;;;;;;","300 mil [THT]",1059.03,926.604,-90,Top,THT
+U1,";;;;;;;;","THT",904.721,359.568,0,Top,THT
+Via2,";;;;;;;;","",234.371,1080.34,0,Top,MANUAL
+Restistenza per ingresso octoupler led,"330;;;;;0.25W;;;","THT",1364.7,138.588,180,Top,THT
+A2,";;;;;;;;","",485.135,1249.38,0,Top,MANUAL
+Buzzer entrance,";;;;;;;;","jst-2-smd",1445.27,566.838,90,Top,SMT
+Pullup octocoupler,"1k;;;;;0.25W;;;","THT",418.882,143.883,180,Top,THT
+J1,";;;;;;;;","THT",254.38,730.514,-90,Top,THT
+Buck converter,";;;;;;;;","molex-1x6_lock",1304.72,1526.21,0,Bottom,SMT
+Voltage entrance,";;;;;;;;","jst-2-smd",1445.27,1066.84,90,Top,SMT
+Battery connector,";;;;;;;;","jst-2-smd",264.168,445.584,-90,Top,SMT
