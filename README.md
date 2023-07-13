@@ -8,7 +8,7 @@ Core Functionality
 
 This smart doorbell operates using an optoisolator, which safely detects every doorbell press. In my case, a 9V DC power supply powers the doorbell, and this voltage is used to charge the battery via a buck converter. I am aware that different setups can be very different, and this will require extensive testing.
 
-![alt text](https://github.com/ComicBit/Smart-Doorbell-Post/blob/main/pcb.png?raw=true)
+![alt text](https://github.com/ComicBit/Smart-Doorbell-Post/blob/main/img/pcb.png?raw=true)
 
 Hardware Breakdown
 ------------------
