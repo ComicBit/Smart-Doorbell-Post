@@ -1,67 +1,74 @@
-Smart Doorbell Wiki
-===================
+Smart Doorbell Overview
+===============================
 
-Introduction
-------------
+Bringing the traditional doorbell into the era of smart homes, this project aims to establish a budget-friendly, universal doorbell system. This will enable your doorbell to join the local network, sending a POST request to a designated URL every time the doorbell is pressed. Such integration is ideal with platforms like Homebridge and Homebridge Http Doorbell V3, which provide audible notifications via HomeKit.
 
-This project revolves around enhancing a traditional doorbell system with smart capabilities. The aim is to connect the doorbell to a local network and send a POST request to a specific URL whenever the doorbell is pressed. This will allow integration of the doorbell system with other smart devices and services. For instance you can use this in combination with Homebridge to hear the doorbell in HomeKit.
+Core Functionality
+------------------
 
-Hardware Components
--------------------
+This smart doorbell operates using an optoisolator, which safely detects every doorbell press. In my case, a 9V DC power supply powers the doorbell, and this voltage is used to charge the battery via a buck converter. I am aware that different setups can be very different, and this will require testing.
+
+Hardware Breakdown
+------------------
+
+Your smart doorbell will consist of:
 
 *   Seed Studio ESP32-C3 board
 *   PC817C Optoisolator
 *   Pull-up resistor (1k ohm)
 *   Current-limiting resistor (390 ohms)
-*   Doorbell buzzer operating at 5V
+*   Doorbell buzzer (operating at 5V) - note: different buzzer voltages may require adjustment of the 390-ohm resistor.
+*   3x - JST 2 Pins connectors
+*   Type C to VCC/GND cable
 
-PCB Design
-----------
+Custom PCB Design
+-----------------
 
-A custom PCB design for this project is available in the `design/gerber` folder in the repository. The design includes all the necessary connections for the ESP32-C3, the optoisolator, and the resistors. You can use this design to create a compact and reliable hardware setup for this project.
+The project includes a custom PCB design found in the `design/gerber` repository folder. This layout offers all the essential connections for the ESP32-C3, optoisolator, and resistors, leading to a compact and trustworthy hardware configuration. Note: Power input for the ESP is drawn from a pinout connected to the ESP's type c port.
 
 Software Components
 -------------------
 
-The project uses the Arduino platform for programming the ESP32-C3. The code connects the ESP32-C3 to a Wi-Fi network, sets up an interrupt to detect when the doorbell is pressed, sends a POST request when the doorbell is pressed, and optimizes power consumption by using deep sleep mode when idle.
+Built on the Arduino platform, the ESP32-C3 code connects to a Wi-Fi network, sets up an interrupt for doorbell press detection, and sends POST requests accordingly. It also features an energy-efficient deep sleep mode during idle times. To prevent network spamming due to rapid doorbell presses, a timer creates a cooldown period between POST requests.
 
-Additionally, a cooldown mechanism is implemented using a timer to avoid spamming the network with multiple POST requests if the doorbell plays multiple sounds in quick succession. The cooldown timer can be set to a specific duration, allowing a period of time to pass before sending another POST request.
+To work with the software, install the Arduino IDE, ESP32 board definitions, and Arduino `WiFi` and `HTTPClient` libraries.
 
-You will need to install the Arduino IDE and the ESP32 board definitions to compile and upload the code. You also need the Arduino `WiFi` and `HTTPClient` libraries for network connectivity and HTTP requests.
+Setup Procedure
+---------------
 
-Setup Instructions
-------------------
-
-1.  Install the Arduino IDE and the ESP32 board definitions.
-2.  Open the Arduino sketch provided in the repository.
-3.  Replace `<Your Network SSID>`, `<Your Network Password>`, and `http://192.168.50.150:9595/door` in the code with your actual Wi-Fi SSID, password, and the URL you want to send the POST request to.
-4.  Adjust the cooldown timer duration according to your requirements. This can be done by modifying the timer settings in the code.
+1.  Install the Arduino IDE and ESP32 board definitions.
+2.  Open the Arduino sketch from the repository.
+3.  Substitute `<Your Network SSID>`, `<Your Network Password>`, and `http://192.168.50.150:9595/door` with your Wi-Fi SSID, password, and desired POST request URL.
+4.  Adjust the cooldown timer duration to fit your needs.
 5.  Connect the ESP32-C3 to your computer.
-6.  Select the correct board and port in the Arduino IDE.
+6.  Select the appropriate board and port in the Arduino IDE.
 7.  Compile and upload the sketch to the ESP32-C3.
-8.  Assemble the hardware components as described in the PCB design.
-9.  Connect the ESP32-C3 setup to the doorbell system.
+8.  Assemble the hardware as directed by the PCB design.
+9.  Connect the doorbell setup to your doorbell system.
 
-State of the project
--------
-As today the design is still UNTESTED and it will be updated once I will be able to build the boards and test everything properly.
+Project Status
+--------------
 
-Safety Precautions
-------------------
+As of now, the design is UNTESTED. Updates will follow after the boards' assembly and thorough testing.
 
-Remember to always take necessary safety precautions when working with electricity. If you're unsure, consider seeking help from someone with experience in electronics. This project involves interfacing with a doorbell system, which typically operates at low voltages but can still present risks if not handled correctly.
+Safety Warning
+--------------
+
+Always exercise safety when working with electricity. If you're inexperienced with electronics, seek help from a professional. Despite doorbell systems generally operating at low voltages, mishandling can lead to hazards.
 
 Support
 -------
 
-If you have any questions or run into any issues, feel free to open an issue on the repository. We'll be happy to assist you.
+For any questions or issues, open an issue on the repository. We're ready to assist you.
 
 Future Enhancements
 -------------------
 
-While this project provides a basic integration of a doorbell system with a smart home setup, there's a lot more that could be done. As of today, the way the battery will get charged is using the type c connector because I couldn't find a clear answer on how to power the board from the pins without breaking the charging functionality. I found only a reference in the [Seed Studio documentation](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/) in the chapter titled 'Power Pins', which I didn't quite understand. Future enhancements would aim to implement the possibility of opening the door from the smart home system. I would love to be able to hear and speak from HomeKit but we will see how much time this would take me. Contributions are more than welcome.
+This project merely initiates the integration of doorbells into smart homes. As mentioned earlier, battery charging is managed via the type c connector, as guidance on powering the board from the pins without compromising the charging function remains unclear ([Seed Studio documentation](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/)).
+
+Future enhancements may include distinguishing between different sounds, enabling door operation from the smart home system, and integrating voice communication through HomeKit. Though the timeline is uncertain, contributions and testing are always appreciated.
 
 License
 -------
 
-This project is open source and available under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
+This open-source project is under the [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
