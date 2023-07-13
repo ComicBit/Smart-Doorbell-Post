@@ -59,17 +59,17 @@ Safety Warning
 
 Always exercise safety when working with electricity. If you're inexperienced with electronics, seek help from a professional. Despite doorbell systems generally operating at low voltages, mishandling can lead to hazards.
 
-Support
--------
-
-For any questions or issues, open an issue on the repository.
-
 Future Enhancements
 -------------------
 
 This project merely initiates the integration of doorbells into smart homes. Unfortunately though, due to my limited knowledge of PCB designing as right now the battery connection is quite finnicky.
 
 Future enhancements may include distinguishing between different sounds, enabling door operation from the smart home system, and integrating voice communication through HomeKit. Though the timeline is uncertain, contributions and testing are always appreciated.
+
+Support
+-------
+
+For any questions or issues, open an issue on the repository.
 
 License
 -------
