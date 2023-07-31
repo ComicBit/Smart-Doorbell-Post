@@ -8,7 +8,7 @@ Core Functionality
 
 This smart doorbell operates using an optoisolator, which safely detects every doorbell press. In my case, a 9V DC power supply powers the doorbell, and this voltage is used to charge the battery via a buck converter. I am aware that different setups can be very different, and this will require extensive testing.
 
-![alt text](https://github.com/ComicBit/Smart-Doorbell-Post/blob/main/img/pcb.png?raw=true)
+![alt text](https://github.com/ComicBit/Smart-Doorbell-Post/blob/main/img/boardv2.gif?raw=true)
 
 Hardware Breakdown
 ------------------
@@ -18,7 +18,7 @@ Your smart doorbell will consist of:
 *   Seed Studio ESP32-S3 board (the C3 is not a viable option because it misses the possibility of being waken up from external inputs)
 *   PC817C Optoisolator
 *   Buck converter DD2712SA 5v
-*   Pull-up resistor (1k ohm)
+*   Pull-up resistor (10k ohm)
 *   Current-limiting resistor (390 ohms)
 *   DO-41 Diode
 *   Doorbell buzzer (operating at 5V) - note: different buzzer voltages may require adjustment of the 390-ohm resistor.
